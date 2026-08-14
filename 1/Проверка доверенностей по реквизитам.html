@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)https://www.reestr-dover.ru/revocations -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./Проверка доверенностей по реквизитам_files/tag_phono.js" type="text/javascript" charset="utf-8" async=""></script><meta http-equiv="origin-trial" content="A7vZI3v+Gz7JfuRolKNM4Aff6zaGuT7X0mf3wtoZTnKv6497cVMnhy03KDqX7kBz/q/iidW7srW31oQbBt4VhgoAAACUeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJEaXNhYmxlVGhpcmRQYXJ0eVN0b3JhZ2VQYXJ0aXRpb25pbmczIiwiZXhwaXJ5IjoxNzU3OTgwODAwLCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==">
+    <title>Проверка доверенностей по реквизитам</title>
+
+    
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type="text/javascript" async="" charset="utf-8" src="./Проверка доверенностей по реквизитам_files/recaptcha__ru.js" crossorigin="anonymous" integrity="sha384-mcwA+jPbqKpaKJOy+MDn1rWYyUFwcdOnvEFQz7sVles7djT1Zddp5nHWJn5/84x9"></script><script src="./Проверка доверенностей по реквизитам_files/api.js" async="" defer=""></script>
+    <script src="./Проверка доверенностей по реквизитам_files/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous" defer=""></script>
+    <script src="./Проверка доверенностей по реквизитам_files/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+    <script src="./Проверка доверенностей по реквизитам_files/saved_resource"></script>
+
+    <script>
+        tailwind.config = {
+            mode: 'jit',
+            important: true,
+            darkMode: false, // or 'media' or 'class'
+            theme: {
+                extend: {
+                    borderRadius: {
+                        1: '4px',
+                        2: '8px',
+                        3: '12px',
+                        4: '16px',
+                        5: '20px',
+                        10: '40px',
+                    },
+                    lineHeight: {
+                        4: '16px',
+                        5: '20px',
+                        6: '24px',
+                        8: '32px',
+                        9: '36px',
+                        10: '40px',
+                    },
+                    spacing: {
+                        1: '4px',
+                        2: '8px',
+                        3: '12px',
+                        4: '16px',
+                        5: '20px',
+                        6: '24px',
+                        7: '28px',
+                        8: '32px',
+                        9: '36px',
+                        10: '40px',
+                        11: '44px',
+                        12: '48px',
+                        13: '52px',
+                        15: '60px',
+                        17: '68px',
+                        20: '80px',
+                    },
+                },
+                fontSize: {
+                    10: '10px',
+                    12: '12px',
+                    14: '14px',
+                    16: '16px',
+                    18: '18px',
+                    20: '20px',
+                    22: '22px',
+                    24: '24px',
+                    28: '28px',
+                    32: '32px',
+                    36: '36px',
+                    40: '40px',
+                    64: '64px',
+                    72: '72px',
+                },
+                colors: {
+                    'dark-red': '#791533',
+                    'dark-text': '#585858',
+                    'light-grey': '#DDDDDD',
+                    'grey': '#F2F2F2',
+                },
+                screens: {
+                    xs: '376px',
+                    sm: '767px',
+                    md: '1201px',
+                },
+            },
+        }
+    </script>
+
+    <style lang="scss">
+        body {
+            font-family: 'Open Sans', sans-serif !important;
+        }
+        .container {
+            max-width: 1200px !important;
+        }
+
+        .tabs,
+        .nav.nav-pills {
+            display: flex;
+        }
+
+        .nav li a {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .pull-right {
+            float: right !important;
+        }
+
+        .glyphicon {
+            position: relative;
+            top: 1px;
+            display: inline-block;
+            font-family: 'Glyphicons Halflings';
+            font-style: normal;
+            font-weight: normal;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .glyphicon-search:before {
+            content: "\e003";
+        }
+
+        .btn-default,
+        .btn-primary {
+            color: white !important;
+        }
+
+        .btn {
+            font-weight: 700 !important;
+            display: flex !important;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .select2.select2-container {
+            border-radius: 6px;
+        }
+
+        .tabs.adaptive li {
+            flex: 1 1 0%;
+            padding-left: 40px;
+            padding-right: 40px;
+            text-align: left;
+
+            @media only screen and (min-width: 767px) {
+                padding-left: 12px;
+                padding-right: 12px;
+                text-align: center;
+            }
+        }
+
+        .tabs.adaptive li.active {
+            @media only screen and (max-width: 766px) {
+                border-left: 5px solid #C90540;
+            }
+        }
+    </style>
+<link rel="shortcut icon" href="https://www.reestr-dover.ru/favicon.ico"><link href="./Проверка доверенностей по реквизитам_files/styles.css" rel="stylesheet"><style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:currentColor}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.container{width:100%}@media (min-width: 376px){.container{max-width:376px}}@media (min-width: 767px){.container{max-width:767px}}@media (min-width: 1201px){.container{max-width:1201px}}.invisible{visibility:hidden !important}.col-span-2{grid-column:span 2 / span 2 !important}.col-span-12{grid-column:span 12 / span 12 !important}.mb-3{margin-bottom:12px !important}.block{display:block !important}.flex{display:flex !important}.table{display:table !important}.grid{display:grid !important}.hidden{display:none !important}.h-\[1px\]{height:1px !important}.h-\[56px\]{height:56px !important}.h-full{height:100% !important}.\!w-full{width:100% !important}.w-\[108px\]{width:108px !important}.w-\[1px\]{width:1px !important}.w-\[210px\]{width:210px !important}.w-\[90\%\]{width:90% !important}.w-full{width:100% !important}.w-\[1200px\]{width:1200px !important}.flex-1{flex:1 1 0% !important}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr)) !important}.grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr)) !important}.flex-col{flex-direction:column !important}.flex-wrap{flex-wrap:wrap !important}.flex-nowrap{flex-wrap:nowrap !important}.items-start{align-items:flex-start !important}.items-end{align-items:flex-end !important}.items-center{align-items:center !important}.justify-end{justify-content:flex-end !important}.justify-center{justify-content:center !important}.justify-between{justify-content:space-between !important}.\!gap-1{gap:4px !important}.\!gap-3{gap:12px !important}.\!gap-5{gap:20px !important}.gap-1{gap:4px !important}.gap-2{gap:8px !important}.gap-x-4{column-gap:16px !important}.gap-x-8{column-gap:32px !important}.gap-y-2{row-gap:8px !important}.overflow-x-auto{overflow-x:auto !important}.bg-light-grey{--tw-bg-opacity:1 !important;background-color:rgb(221 221 221 / var(--tw-bg-opacity, 1)) !important}.\!px-5{padding-left:20px !important;padding-right:20px !important}.px-0{padding-left:0px !important;padding-right:0px !important}.\!pt-5{padding-top:20px !important}.pl-0{padding-left:0px !important}.pb-4{padding-bottom:16px !important}.text-center{text-align:center !important}.text-14{font-size:14px !important}.text-18{font-size:18px !important}.leading-5{line-height:20px !important}.leading-6{line-height:24px !important}.text-dark-red{--tw-text-opacity:1 !important;color:rgb(121 21 51 / var(--tw-text-opacity, 1)) !important}.text-dark-text{--tw-text-opacity:1 !important;color:rgb(88 88 88 / var(--tw-text-opacity, 1)) !important}@media (min-width: 767px){.sm\:\!col-span-1{grid-column:span 1 / span 1 !important}.sm\:col-span-1{grid-column:span 1 / span 1 !important}.sm\:col-span-5{grid-column:span 5 / span 5 !important}.sm\:col-span-7{grid-column:span 7 / span 7 !important}.sm\:mb-0{margin-bottom:0px !important}.sm\:\!block{display:block !important}.sm\:\!hidden{display:none !important}.sm\:w-\[450px\]{width:450px !important}.sm\:w-\[88px\]{width:88px !important}.sm\:w-fit{width:-moz-fit-content !important;width:fit-content !important}.sm\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr)) !important}.sm\:\!flex-row{flex-direction:row !important}.sm\:flex-row{flex-direction:row !important}.sm\:items-center{align-items:center !important}.sm\:\!gap-5{gap:20px !important}.sm\:\!gap-7{gap:28px !important}.sm\:text-16{font-size:16px !important}.sm\:leading-6{line-height:24px !important}.sm\:leading-8{line-height:32px !important}}@media (min-width: 1201px){.md\:col-span-6{grid-column:span 6 / span 6 !important}.md\:w-\[115px\]{width:115px !important}.md\:w-auto{width:auto !important}.md\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr)) !important}.md\:text-22{font-size:22px !important}.md\:text-24{font-size:24px !important}.md\:leading-9{line-height:36px !important}}</style><link rel="stylesheet" href="blob:https://www.reestr-dover.ru/c8d6140a-4647-4468-bd90-93d312acef39"><link rel="stylesheet" href="blob:https://www.reestr-dover.ru/c48821ef-4509-4b35-bfb8-1702ae9beba8"><link rel="stylesheet" href="blob:https://www.reestr-dover.ru/c92e6dfe-d102-4526-b0ad-395971071dc0"><link rel="stylesheet" href="blob:https://www.reestr-dover.ru/308bec14-40a1-4bb2-8048-7d8a94201130"><link rel="stylesheet" href="blob:https://www.reestr-dover.ru/213e76e8-a476-41b4-9d2c-74d77c1a1624"><link rel="stylesheet" href="blob:https://www.reestr-dover.ru/2f72c8f1-24f2-4901-b47e-1de4ceff6280"><link rel="stylesheet" href="blob:https://www.reestr-dover.ru/deb137d4-c933-458d-a575-e115ea8d2308"><link rel="stylesheet" href="blob:https://www.reestr-dover.ru/3e208232-9a59-4958-9630-e51151dc4bc7"><link rel="stylesheet" href="blob:https://www.reestr-dover.ru/96cea046-47a7-4245-abc5-1936fcebbfa1"><link rel="stylesheet" href="blob:https://www.reestr-dover.ru/703ef487-46cc-4fe3-9c85-edacb5a73c59"><link rel="stylesheet" href="blob:https://www.reestr-dover.ru/422bd0be-8caf-4def-bcac-42edeb0337dc"><link rel="stylesheet" href="blob:https://www.reestr-dover.ru/9ef1230c-91f3-4fde-9c3d-e5122c95f617"><link rel="stylesheet" href="blob:https://www.reestr-dover.ru/46f639cd-8cd8-4933-901f-d8081629a413"><link rel="stylesheet" href="blob:https://www.reestr-dover.ru/ca625b4c-6480-4887-9988-3a2c9741db9e"><link rel="stylesheet" href="blob:https://www.reestr-dover.ru/755e486c-870c-40c2-b6e9-2b244ce6c2de"><link rel="stylesheet" href="blob:https://www.reestr-dover.ru/dcbd2ad1-33e5-439d-b759-a4bc7c284637"><script async="" charset="utf-8" src="./Проверка доверенностей по реквизитам_files/tag.js"></script><style type="text/css"></style><style type="text/css">
+.select2-container{box-sizing:border-box;display:inline-block;margin:0;position:relative;vertical-align:middle
+}
+.select2-container .select2-selection--single{box-sizing:border-box;cursor:pointer;display:block;height:28px;user-select:none;-webkit-user-select:none
+}
+.select2-container .select2-selection--single .select2-selection__rendered{display:block;padding-left:8px;padding-right:20px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap
+}
+.select2-container .select2-selection--single .select2-selection__clear{position:relative
+}
+.select2-container[dir=rtl] .select2-selection--single .select2-selection__rendered{padding-right:8px;padding-left:20px
+}
+.select2-container .select2-selection--multiple{box-sizing:border-box;cursor:pointer;display:block;min-height:32px;user-select:none;-webkit-user-select:none
+}
+.select2-container .select2-selection--multiple .select2-selection__rendered{display:inline-block;overflow:hidden;padding-left:8px;text-overflow:ellipsis;white-space:nowrap
+}
+.select2-container .select2-search--inline{float:left
+}
+.select2-container .select2-search--inline .select2-search__field{box-sizing:border-box;border:none;font-size:100%;margin-top:5px;padding:0
+}
+.select2-container .select2-search--inline .select2-search__field::-webkit-search-cancel-button{-webkit-appearance:none
+}
+.select2-dropdown{background-color:#fff;border:1px solid #aaa;border-radius:4px;box-sizing:border-box;display:block;position:absolute;left:-100000px;width:100%;z-index:1051
+}
+.select2-results{display:block
+}
+.select2-results__options{list-style:none;margin:0;padding:0
+}
+.select2-results__option{padding:6px;user-select:none;-webkit-user-select:none
+}
+.select2-results__option[aria-selected]{cursor:pointer
+}
+.select2-container--open .select2-dropdown{left:0
+}
+.select2-container--open .select2-dropdown--above{border-bottom:none;border-bottom-left-radius:0;border-bottom-right-radius:0
+}
+.select2-container--open .select2-dropdown--below{border-top:none;border-top-left-radius:0;border-top-right-radius:0
+}
+.select2-search--dropdown{display:block;padding:4px
+}
+.select2-search--dropdown .select2-search__field{padding:4px;width:100%;box-sizing:border-box
+}
+.select2-search--dropdown .select2-search__field::-webkit-search-cancel-button{-webkit-appearance:none
+}
+.select2-search--dropdown.select2-search--hide{display:none
+}
+.select2-close-mask{border:0;margin:0;padding:0;display:block;position:fixed;left:0;top:0;min-height:100%;min-width:100%;height:auto;width:auto;opacity:0;z-index:99;background-color:#fff;filter:alpha(opacity=0)
+}
+.select2-hidden-accessible{border:0 !important;clip:rect(0 0 0 0) !important;-webkit-clip-path:inset(50%) !important;clip-path:inset(50%) !important;height:1px !important;overflow:hidden !important;padding:0 !important;position:absolute !important;width:1px !important;white-space:nowrap !important
+}
+.select2-container--default .select2-selection--single{background-color:#fff;border:1px solid #aaa;border-radius:4px
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered{color:#444;line-height:28px
+}
+.select2-container--default .select2-selection--single .select2-selection__clear{cursor:pointer;float:right;font-weight:bold
+}
+.select2-container--default .select2-selection--single .select2-selection__placeholder{color:#999
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow{height:26px;position:absolute;top:1px;right:1px;width:20px
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b{border-color:#888 rgba(0,0,0,0) rgba(0,0,0,0) rgba(0,0,0,0);border-style:solid;border-width:5px 4px 0 4px;height:0;left:50%;margin-left:-4px;margin-top:-2px;position:absolute;top:50%;width:0
+}
+.select2-container--default[dir=rtl] .select2-selection--single .select2-selection__clear{float:left
+}
+.select2-container--default[dir=rtl] .select2-selection--single .select2-selection__arrow{left:1px;right:auto
+}
+.select2-container--default.select2-container--disabled .select2-selection--single{background-color:#eee;cursor:default
+}
+.select2-container--default.select2-container--disabled .select2-selection--single .select2-selection__clear{display:none
+}
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b{border-color:rgba(0,0,0,0) rgba(0,0,0,0) #888 rgba(0,0,0,0);border-width:0 4px 5px 4px
+}
+.select2-container--default .select2-selection--multiple{background-color:#fff;border:1px solid #aaa;border-radius:4px;cursor:text
+}
+.select2-container--default .select2-selection--multiple .select2-selection__rendered{box-sizing:border-box;list-style:none;margin:0;padding:0 5px;width:100%
+}
+.select2-container--default .select2-selection--multiple .select2-selection__rendered li{list-style:none
+}
+.select2-container--default .select2-selection--multiple .select2-selection__clear{cursor:pointer;float:right;font-weight:bold;margin-top:5px;margin-right:10px;padding:1px
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice{background-color:#e4e4e4;border:1px solid #aaa;border-radius:4px;cursor:default;float:left;margin-right:5px;margin-top:5px;padding:0 5px
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove{color:#999;cursor:pointer;display:inline-block;font-weight:bold;margin-right:2px
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover{color:#333
+}
+.select2-container--default[dir=rtl] .select2-selection--multiple .select2-selection__choice,.select2-container--default[dir=rtl] .select2-selection--multiple .select2-search--inline{float:right
+}
+.select2-container--default[dir=rtl] .select2-selection--multiple .select2-selection__choice{margin-left:5px;margin-right:auto
+}
+.select2-container--default[dir=rtl] .select2-selection--multiple .select2-selection__choice__remove{margin-left:2px;margin-right:auto
+}
+.select2-container--default.select2-container--focus .select2-selection--multiple{border:solid #000 1px;outline:0
+}
+.select2-container--default.select2-container--disabled .select2-selection--multiple{background-color:#eee;cursor:default
+}
+.select2-container--default.select2-container--disabled .select2-selection__choice__remove{display:none
+}
+.select2-container--default.select2-container--open.select2-container--above .select2-selection--single,.select2-container--default.select2-container--open.select2-container--above .select2-selection--multiple{border-top-left-radius:0;border-top-right-radius:0
+}
+.select2-container--default.select2-container--open.select2-container--below .select2-selection--single,.select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple{border-bottom-left-radius:0;border-bottom-right-radius:0
+}
+.select2-container--default .select2-search--dropdown .select2-search__field{border:1px solid #aaa
+}
+.select2-container--default .select2-search--inline .select2-search__field{background:rgba(0,0,0,0);border:none;outline:0;box-shadow:none;-webkit-appearance:textfield
+}
+.select2-container--default .select2-results>.select2-results__options{max-height:200px;overflow-y:auto
+}
+.select2-container--default .select2-results__option[role=group]{padding:0
+}
+.select2-container--default .select2-results__option[aria-disabled=true]{color:#999
+}
+.select2-container--default .select2-results__option[aria-selected=true]{background-color:#ddd
+}
+.select2-container--default .select2-results__option .select2-results__option{padding-left:1em
+}
+.select2-container--default .select2-results__option .select2-results__option .select2-results__group{padding-left:0
+}
+.select2-container--default .select2-results__option .select2-results__option .select2-results__option{margin-left:-1em;padding-left:2em
+}
+.select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option{margin-left:-2em;padding-left:3em
+}
+.select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option{margin-left:-3em;padding-left:4em
+}
+.select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option{margin-left:-4em;padding-left:5em
+}
+.select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option{margin-left:-5em;padding-left:6em
+}
+.select2-container--default .select2-results__option--highlighted[aria-selected]{background-color:#5897fb;color:#fff
+}
+.select2-container--default .select2-results__group{cursor:default;display:block;padding:6px
+}
+.select2-container--classic .select2-selection--single{background-color:rgb(246.5,246.5,246.5);border:1px solid #aaa;border-radius:4px;outline:0;background-image:-webkit-linear-gradient(top, white 50%, #eeeeee 100%);background-image:-o-linear-gradient(top, white 50%, #eeeeee 100%);background-image:linear-gradient(to bottom, white 50%, #eeeeee 100%);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFEEEEEE', GradientType=0)
+}
+.select2-container--classic .select2-selection--single:focus{border:1px solid #5897fb
+}
+.select2-container--classic .select2-selection--single .select2-selection__rendered{color:#444;line-height:28px
+}
+.select2-container--classic .select2-selection--single .select2-selection__clear{cursor:pointer;float:right;font-weight:bold;margin-right:10px
+}
+.select2-container--classic .select2-selection--single .select2-selection__placeholder{color:#999
+}
+.select2-container--classic .select2-selection--single .select2-selection__arrow{background-color:#ddd;border:none;border-left:1px solid #aaa;border-top-right-radius:4px;border-bottom-right-radius:4px;height:26px;position:absolute;top:1px;right:1px;width:20px;background-image:-webkit-linear-gradient(top, #eeeeee 50%, #cccccc 100%);background-image:-o-linear-gradient(top, #eeeeee 50%, #cccccc 100%);background-image:linear-gradient(to bottom, #eeeeee 50%, #cccccc 100%);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEEEEEE', endColorstr='#FFCCCCCC', GradientType=0)
+}
+.select2-container--classic .select2-selection--single .select2-selection__arrow b{border-color:#888 rgba(0,0,0,0) rgba(0,0,0,0) rgba(0,0,0,0);border-style:solid;border-width:5px 4px 0 4px;height:0;left:50%;margin-left:-4px;margin-top:-2px;position:absolute;top:50%;width:0
+}
+.select2-container--classic[dir=rtl] .select2-selection--single .select2-selection__clear{float:left
+}
+.select2-container--classic[dir=rtl] .select2-selection--single .select2-selection__arrow{border:none;border-right:1px solid #aaa;border-radius:0;border-top-left-radius:4px;border-bottom-left-radius:4px;left:1px;right:auto
+}
+.select2-container--classic.select2-container--open .select2-selection--single{border:1px solid #5897fb
+}
+.select2-container--classic.select2-container--open .select2-selection--single .select2-selection__arrow{background:rgba(0,0,0,0);border:none
+}
+.select2-container--classic.select2-container--open .select2-selection--single .select2-selection__arrow b{border-color:rgba(0,0,0,0) rgba(0,0,0,0) #888 rgba(0,0,0,0);border-width:0 4px 5px 4px
+}
+.select2-container--classic.select2-container--open.select2-container--above .select2-selection--single{border-top:none;border-top-left-radius:0;border-top-right-radius:0;background-image:-webkit-linear-gradient(top, white 0%, #eeeeee 50%);background-image:-o-linear-gradient(top, white 0%, #eeeeee 50%);background-image:linear-gradient(to bottom, white 0%, #eeeeee 50%);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFEEEEEE', GradientType=0)
+}
+.select2-container--classic.select2-container--open.select2-container--below .select2-selection--single{border-bottom:none;border-bottom-left-radius:0;border-bottom-right-radius:0;background-image:-webkit-linear-gradient(top, #eeeeee 50%, white 100%);background-image:-o-linear-gradient(top, #eeeeee 50%, white 100%);background-image:linear-gradient(to bottom, #eeeeee 50%, white 100%);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEEEEEE', endColorstr='#FFFFFFFF', GradientType=0)
+}
+.select2-container--classic .select2-selection--multiple{background-color:#fff;border:1px solid #aaa;border-radius:4px;cursor:text;outline:0
+}
+.select2-container--classic .select2-selection--multiple:focus{border:1px solid #5897fb
+}
+.select2-container--classic .select2-selection--multiple .select2-selection__rendered{list-style:none;margin:0;padding:0 5px
+}
+.select2-container--classic .select2-selection--multiple .select2-selection__clear{display:none
+}
+.select2-container--classic .select2-selection--multiple .select2-selection__choice{background-color:#e4e4e4;border:1px solid #aaa;border-radius:4px;cursor:default;float:left;margin-right:5px;margin-top:5px;padding:0 5px
+}
+.select2-container--classic .select2-selection--multiple .select2-selection__choice__remove{color:#888;cursor:pointer;display:inline-block;font-weight:bold;margin-right:2px
+}
+.select2-container--classic .select2-selection--multiple .select2-selection__choice__remove:hover{color:#555
+}
+.select2-container--classic[dir=rtl] .select2-selection--multiple .select2-selection__choice{float:right;margin-left:5px;margin-right:auto
+}
+.select2-container--classic[dir=rtl] .select2-selection--multiple .select2-selection__choice__remove{margin-left:2px;margin-right:auto
+}
+.select2-container--classic.select2-container--open .select2-selection--multiple{border:1px solid #5897fb
+}
+.select2-container--classic.select2-container--open.select2-container--above .select2-selection--multiple{border-top:none;border-top-left-radius:0;border-top-right-radius:0
+}
+.select2-container--classic.select2-container--open.select2-container--below .select2-selection--multiple{border-bottom:none;border-bottom-left-radius:0;border-bottom-right-radius:0
+}
+.select2-container--classic .select2-search--dropdown .select2-search__field{border:1px solid #aaa;outline:0
+}
+.select2-container--classic .select2-search--inline .select2-search__field{outline:0;box-shadow:none
+}
+.select2-container--classic .select2-dropdown{background-color:#fff;border:1px solid rgba(0,0,0,0)
+}
+.select2-container--classic .select2-dropdown--above{border-bottom:none
+}
+.select2-container--classic .select2-dropdown--below{border-top:none
+}
+.select2-container--classic .select2-results>.select2-results__options{max-height:200px;overflow-y:auto
+}
+.select2-container--classic .select2-results__option[role=group]{padding:0
+}
+.select2-container--classic .select2-results__option[aria-disabled=true]{color:gray
+}
+.select2-container--classic .select2-results__option--highlighted[aria-selected]{background-color:#3875d7;color:#fff
+}
+.select2-container--classic .select2-results__group{cursor:default;display:block;padding:6px
+}
+.select2-container--classic.select2-container--open .select2-dropdown{border-color:#5897fb
+}
+.select2-container.select2-container--wr.select2-container--disabled .select2-selection{cursor:not-allowed;background:#eee
+}
+.select2-container.select2-container--wr{height:40px;border:1px solid #cbcbcb;-moz-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s
+}
+.select2-container.select2-container--wr:hover{border-color:#8a8a8a
+}
+.select2-container.select2-container--wr .select2-selection__arrow{display:block;width:17px;height:9px;position:absolute;right:10px;top:15px;background:url(d1e0b14dc6a236bc0e553e14485514b9.svg)
+}
+.select2-container.select2-container--wr.select2-container--below,.select2-container.select2-container--wr.select2-container--above{border:1px solid #cbcbcb !important
+}
+.select2-container.select2-container--wr.select2-container--open{border:none
+}
+.select2-container.select2-container--wr.select2-container--open .select2-selection__arrow{background:url(f3dc0d7b149c5badd3013379921814a5.svg)
+}
+.select2-container.select2-container--wr .select2-selection{font-size:14px;padding-left:12px;padding-top:9px;padding-right:40px;color:#3c3c3c;height:100% !important
+}
+.select2-container.select2-container--wr .select2-selection .select2-selection__rendered{padding:0 !important
+}
+.select2-container.select2-container--wr .select2-selection .select2-selection__rendered .select2-selection__clear{padding-right:5px;font-size:20px;line-height:20px;float:left
+}
+.select2-container.select2-container--wr .select2-selection .select2-selection__placeholder{color:#585858;opacity:.3
+}
+.select2-container.select2-container--wr .select2-dropdown{border-color:#cbcbcb !important;font-size:14px;border-radius:1px
+}
+.select2-container.select2-container--wr .select2-dropdown .select2-container--open{border:none
+}
+.select2-container.select2-container--wr .select2-dropdown .select2-results .select2-results__options{max-height:300px;overflow-y:auto
+}
+.select2-container.select2-container--wr .select2-dropdown .select2-results .select2-results__option{padding-left:22px
+}
+.select2-container.select2-container--wr .select2-dropdown .select2-results .select2-results__option.select2-results__option--highlighted{background:#f6f6f6
+}</style><style type="text/css">
+#info-filter .form-row{width:100%
+}
+#info-filter .form-row .label-panel:not(.custom-adaptive){width:30% !important
+}
+#info-filter .form-row .label-panel.custom-adaptive{height:100%;display:flex;align-items:center
+}
+#info-filter .form-row .input-panel{width:auto !important
+}
+#info-filter .nav{display:flex
+}
+#info-filter .nav li{display:flex;align-items:center;justify-content:center;flex:1
+}
+#info-filter .nav a{display:flex;align-items:center;justify-content:center;width:100%;height:100%
+}
+#info-filter .nav-two-lines{flex-direction:column
+}
+#info-filter .nav-two-lines a{padding:20px
+}</style><style type="text/css">.revocations .wr-input-padding{padding-right:0!important}.control-label.double{padding:12px 18px 4px 20px!important}.control-label.double .first{display:block}.control-label.double .second{display:block;font-size:14px;color:#8a8a8a}</style><style type="text/css">.table>tbody+tbody{border-top:none}</style><style type="text/css">.table>tbody+tbody{border-top:none}</style><style type="text/css">
+#info-filter2 .nav{display:flex
+}
+#info-filter2 .nav li{display:flex;align-items:center;justify-content:center;flex:1
+}
+#info-filter2 .nav a{display:flex;align-items:center;justify-content:center;width:100%;height:100%
+}
+#info-filter2 .nav-two-lines{flex-direction:column
+}
+#info-filter2 .nav-two-lines a{padding:20px
+}</style></head>
+
+<body>
+<div id="app"><div class="v-spinner" style="position: relative; font-size: 0px; display: none;"><div class="v-fade v-fade1" style="background-color: rgb(241, 101, 98); height: 25px; width: 6px; margin: 2px; border-radius: 30px; top: 30px; left: 0px; animation-delay: 0.12s;"></div><div class="v-fade v-fade2" style="background-color: rgb(241, 101, 98); height: 25px; width: 6px; margin: 2px; border-radius: 30px; top: 20.4545px; left: 20.4545px; animation-delay: 0.24s; transform: rotate(-45deg);"></div><div class="v-fade v-fade3" style="background-color: rgb(241, 101, 98); height: 25px; width: 6px; margin: 2px; border-radius: 30px; top: 0px; left: 30px; animation-delay: 0.36s; transform: rotate(90deg);"></div><div class="v-fade v-fade4" style="background-color: rgb(241, 101, 98); height: 25px; width: 6px; margin: 2px; border-radius: 30px; top: -20.4545px; left: 20.4545px; animation-delay: 0.48s; transform: rotate(45deg);"></div><div class="v-fade v-fade5" style="background-color: rgb(241, 101, 98); height: 25px; width: 6px; margin: 2px; border-radius: 30px; top: -30px; left: 0px; animation-delay: 0.6s;"></div><div class="v-fade v-fade6" style="background-color: rgb(241, 101, 98); height: 25px; width: 6px; margin: 2px; border-radius: 30px; top: -20.4545px; left: -20.4545px; animation-delay: 0.72s; transform: rotate(-45deg);"></div><div class="v-fade v-fade7" style="background-color: rgb(241, 101, 98); height: 25px; width: 6px; margin: 2px; border-radius: 30px; top: 0px; left: -30px; animation-delay: 0.84s; transform: rotate(90deg);"></div><div class="v-fade v-fade8" style="background-color: rgb(241, 101, 98); height: 25px; width: 6px; margin: 2px; border-radius: 30px; top: 20.4545px; left: -20.4545px; animation-delay: 0.96s; transform: rotate(45deg);"></div></div> <div><div class="container"><div class="row"><!----></div></div> <div class="container"><div class="login-bar row"></div> <div class="logo flex items-center !gap-3"><img src="./Проверка доверенностей по реквизитам_files/2dcb1f74a59b744ad759ac1706a9cfd6.png" alt="Федеральная нотариальная палата" class="w-[108px] sm:w-[88px] md:w-[115px]"> <div class="flex items-start sm:items-center flex-col sm:!flex-row gap-2 sm:!gap-7"><div class="text-dark-red text-18 md:text-24 leading-6 sm:leading-8 w-[210px] sm:w-fit">ФЕДЕРАЛЬНАЯ<br>НОТАРИАЛЬНАЯ ПАЛАТА</div> <div class="hidden sm:!block bg-light-grey w-[1px] h-[56px]"></div> <div class="block sm:!hidden bg-light-grey h-[1px] w-full"></div> <div class="leading-5 text-14 sm:text-16 sm:leading-6 md:text-22 md:leading-9 text-dark-text">Проверка доверенностей<br>по реквизитам</div></div></div></div> <div class="container"><ul class="tabs adaptive flex-col sm:flex-row"><li class=""><a href="https://www.reestr-dover.ru/" style="cursor: pointer;">ПРОВЕРИТЬ ДОВЕРЕННОСТЬ</a></li> <li class="router-link-exact-active active"><a href="https://www.reestr-dover.ru/revocations" style="cursor: pointer; line-height: 18px; padding: 13px 0px;"><span style="font-size: 18px; display: inline-block;">СВЕДЕНИЯ ОБ ДОВЕРЕННОСТИ</span><br> <span style="font-size: 11px; display: inline-block;">совершенной в простой письменной форме</span></a></li> <li class=""><a href="https://www.reestr-dover.ru/other" style="cursor: pointer;">
+                    ИНЫЕ НОТАРИАЛЬНЫЕ ДЕЙСТВИЯ
+                </a></li></ul></div> <div class="container tab-content" style="padding-bottom: 100px;"><div id="info-filter" class="row" style="padding-top: 30px;"><div class="text-center" style="margin-bottom: 12px; padding-top: 24px;"><ul class="nav nav-pills nav-justified"><li class="active"><a href="https://www.reestr-dover.ru/revocations#">Сведения о совершенной в нотариальной форме отмене доверенности</a></li> <li class=""><a href="https://www.reestr-dover.ru/revocations#">Сведения об отмене доверенности в реестре распоряжений об отмене
+          доверенностей</a></li> <li class=""><a href="https://www.reestr-dover.ru/revocations#">Сведения об отмене доверенности в газете "Коммерсант"</a></li></ul></div> <div class="clearfix"><div class="revocations form-horizontal" style="padding-bottom: 20px; display: none;"><div class="grid grid-cols-12 gap-x-8"><div class="col-span-12 md:col-span-6 gap-x-4"><div class="form-group wr-form-group gap-x-4 grid grid-cols-12 mb-3 sm:mb-0"><label class="control-label double col-span-12 sm:col-span-5"><span class="first">Реестровый номер</span> <span class="second">точное совпадение</span></label> <div class="col-span-12 sm:col-span-7 wr-input-padding"><input type="text" class="form-control"></div></div> <div class="form-group wr-form-group gap-x-4 grid grid-cols-12 mb-3 sm:mb-0"><label class="control-label col-span-12 sm:col-span-5">
+                        Дата удостоверения
+                    </label> <div class="col-span-12 sm:col-span-7 wr-input-padding"><input data-v-016fdc66="" type="text" placeholder="ДД.ММ.ГГГГ" class="form-control date" im-insert="false"></div></div> <div class="form-group wr-form-group gap-x-4 grid grid-cols-12 mb-3 sm:mb-0"><label class="control-label col-span-12 sm:col-span-5">Удостоверившее лицо</label> <div class="col-span-12 sm:col-span-7 wr-input-padding"><input type="text" class="form-control"></div></div> <div class="form-group wr-form-group gap-x-4 grid grid-cols-12 mb-3 sm:mb-0"><label class="control-label col-span-12 sm:col-span-5">Физическое лицо</label> <div class="col-span-12 sm:col-span-7 wr-input-padding"><input type="text" class="form-control"></div></div> <div class="form-group wr-form-group gap-x-4 grid grid-cols-12 mb-3 sm:mb-0"><label class="control-label col-span-12 sm:col-span-5">Юридическое лицо</label> <div class="col-span-12 sm:col-span-7 wr-input-padding"><input type="text" class="form-control"></div></div></div> <div class="col-span-12 md:col-span-6 gap-x-4 flex flex-col justify-between"><div><div class="form-group wr-form-group gap-x-4 grid grid-cols-12 mb-3 sm:mb-0"><label class="control-label double col-span-12 sm:col-span-5"><span class="first">Номер документа</span> <span class="second">точное совпадение</span></label> <div class="col-span-12 sm:col-span-7 wr-input-padding"><input type="text" class="form-control"></div></div> <div class="form-group wr-form-group gap-x-4 grid grid-cols-12 mb-3 sm:mb-0"><label class="control-label col-span-12 sm:col-span-5">
+                            Дата документа
+                        </label> <div class="col-span-12 sm:col-span-7 wr-input-padding"><input data-v-016fdc66="" type="text" placeholder="ДД.ММ.ГГГГ" class="form-control date" im-insert="false"></div></div> <div class="form-group wr-form-group gap-x-4 grid grid-cols-12 mb-3 sm:mb-0"><label class="control-label col-span-12 sm:col-span-5" style="padding: 9px 18px 5px 20px !important;">Описание отменяемого документа</label> <div class="col-span-12 sm:col-span-7 wr-input-padding"><input type="text" class="form-control"></div></div> <div class="pb-4"><label class="wr-input-padding" style="color: rgb(138, 138, 138); font-weight: normal;"><input type="checkbox" style="margin-right: 5px;">
+                            Искать на kartoteka.ru
+                        </label></div></div> <div class="flex justify-end gap-x-4 gap-y-2 flex-wrap items-end"><button class="btn btn-sm btn-grey">
+                        ЗАКРЫТЬ
+                    </button> <button class="btn btn-sm btn-grey">
+                        ОЧИСТИТЬ
+                    </button> <button class="btn btn-sm btn-primary">
+                        НАЙТИ
+                        <i class="arrow right"><img src="./Проверка доверенностей по реквизитам_files/c207c4f2a8b419fcc6ffc49ba3a00028.svg" width="28" height="14"></i></button></div></div></div></div> <button class="btn btn-sm btn-default pull-right" style="margin-bottom: 15px;"><span class="glyphicon glyphicon-search"></span> ПОИСК
+    </button></div> <div><div class="overflow-x-auto"><table class="table table-extra table-search w-[1200px] md:w-auto"><colgroup><col> <col width="120"> <col> <col> <col> <col width="120"> <col width="120"> <col></colgroup> <thead><tr><th colspan="5" style="text-align: center !important;">
+					Сведения об документе
+				</th> <th colspan="3" style="text-align: center !important;">
+					В отношении документа
+				</th></tr> <tr><th rowspan="2" style="text-align: center !important;">
+					Реестровый №
+				</th> <th rowspan="2" style="text-align: center !important;">
+					Дата удостоверения
+				</th> <th rowspan="2" style="text-align: center !important;">
+					Удостоверившее лицо
+				</th> <th colspan="2" style="text-align: center !important;">
+					Обратившиеся лица
+				</th> <th rowspan="2" style="text-align: center !important;">№</th> <th rowspan="2" style="text-align: center !important;">Дата</th> <th rowspan="2" style="text-align: center !important;">
+					Описание отменяемого документа
+				</th></tr> <tr><th style="text-align: center !important;">Физическое лицо</th> <th style="text-align: center !important;">Юридическое лицо</th></tr></thead> <tbody><tr style="height: 20px;"><td colspan="8" style="border-left: hidden; border-right: hidden;"></td></tr></tbody> <tbody><tr><td rowspan="1">14/АА2233445-2026</td> <td rowspan="1">15.07.2026</td> <td rowspan="1">Ивановой Марией Сергеевной, Нотариус</td> <td rowspan="1">Колосова Виктория Ивановна</td> <td rowspan="1"></td> <td></td> <td></td> <td></td> <!----></tr> </tbody><tbody><tr><td rowspan="1">66/237-н/66-2026-2-582</td> <td rowspan="1">13.08.2026</td> <td rowspan="1">Бердникова Алла Юрьевна, Нотариус</td> <td rowspan="1">Иванов Алексей Павлович</td> <td rowspan="1"></td> <td></td> <td></td> <td></td> <!----></tr> </tbody><tbody><tr><td rowspan="1">77/287-н/77-2026-11-611</td> <td rowspan="1">13.08.2026</td> <td rowspan="1">Краснов Герман Евгеньевич, Нотариус</td> <td rowspan="1">Евсеев Игорь Владимирович</td> <td rowspan="1">АКЦИОНЕРНОЕ ОБЩЕСТВО "РЕСУРС-ЭКОНОМИЯ"</td> <td>б/н</td> <td>29.06.2026</td> <td>в ФАС при рассмотрении дел включая, но не ограничиваясь, о нарушении законодательства, законодательства о закупках, закупок товаров, работ, услуг для обеспечения государственных и муниципальных нужд</td> <!----></tr> </tbody><tbody><tr><td rowspan="1">77/287-н/77-2026-11-612</td> <td rowspan="1">13.08.2026</td> <td rowspan="1">Краснов Герман Евгеньевич, Нотариус</td> <td rowspan="1">Евсеев Игорь Владимирович</td> <td rowspan="1">Общество с ограниченной ответственностью "Север Эстейт"</td> <td>б/н</td> <td>01.09.2025</td> <td>при осуществлении закупок товаров, работ, услуг или иного лица при реализации движимого имущества</td> <!----></tr> </tbody><tbody><tr><td rowspan="1">77/744-н/77-2026-1-246</td> <td rowspan="1">13.08.2026</td> <td rowspan="1">Коновалов Игорь Викторович, Нотариус</td> <td rowspan="1">Журавлева Светлана Николаевна</td> <td rowspan="1">Общество с ограниченной ответственностью "Прайдекс Констракшн"</td> <td>3 935</td> <td>13.02.2026</td> <td>Доверенность Общества с ограниченной ответственностью "Прайдекс Констракшн" гражданину Республики Беларусь Самохвалову Андрею Николаевичу</td> <!----></tr> </tbody><tbody><tr><td rowspan="1">77/744-н/77-2026-1-247</td> <td rowspan="1">13.08.2026</td> <td rowspan="1">Коновалов Игорь Викторович, Нотариус</td> <td rowspan="1">Журавлева Светлана Николаевна</td> <td rowspan="1">Общество с ограниченной ответственностью "Инновационные технологии"</td> <td>122/53</td> <td>01.01.2024</td> <td>Доверенность Общества с ограниченной ответственностью "Инновационные технологии" гр. Рудяшкину Роману Сергеевичу</td> <!----></tr> </tbody><tbody><tr><td rowspan="20">77/822-н/77-2026-32-748</td> <td rowspan="20">13.08.2026</td> <td rowspan="20">Попова Татьяна Алексеевна, Временно исполняющий обязанности нотариуса</td> <td rowspan="20">Пыжов Алексей Николаевич</td> <td rowspan="20">"ГАЗПРОМБАНК" (АКЦИОНЕРНОЕ ОБЩЕСТВО)</td> <td>Д-Ф001-001/161</td> <td>05.07.2024</td> <td>Доверенность выдана "Газпромбанк" (АО), ОГРН 1027700167110</td> <!----></tr> <tr><td>Д-Ф001-001/22</td> <td>22.01.2025</td> <td>Доверенность выдана "Газпромбанк" (АО), ОГРН 1027700167110</td></tr><tr><td>Д-Ф001/370</td> <td>26.08.2025</td> <td>Доверенность выдана "Газпромбанк" (АО), ОГРН 1027700167110</td></tr><tr><td>Д-Ф001/479</td> <td>09.09.2025</td> <td>Доверенность выдана "Газпромбанк" (АО), ОГРН 1027700167110</td></tr><tr><td>Д-Ф001/696</td> <td>05.11.2025</td> <td>Доверенность выдана "Газпромбанк" (АО), ОГРН 1027700167110</td></tr><tr><td>Д-Ф001/697</td> <td>05.11.2025</td> <td>Доверенность выдана "Газпромбанк" (АО), ОГРН 1027700167110</td></tr><tr><td>Д-Ф001/144</td> <td>02.03.2026</td> <td>Доверенность выдана "Газпромбанк" (АО), ОГРН 1027700167110</td></tr><tr><td>Д-Ф001/147</td> <td>02.03.2026</td> <td>Доверенность выдана "Газпромбанк" (АО), ОГРН 1027700167110</td></tr><tr><td>Д-Ф001/212</td> <td>10.03.2026</td> <td>Доверенность выдана "Газпромбанк" (АО), ОГРН 1027700167110</td></tr><tr><td>Д-Ф001/223</td> <td>10.03.2026</td> <td>Доверенность выдана "Газпромбанк" (АО), ОГРН 1027700167110</td></tr><tr><td>Д-Ф001/272</td> <td>12.03.2026</td> <td>Доверенность выдана "Газпромбанк" (АО), ОГРН 1027700167110</td></tr><tr><td>Д-Ф001/356</td> <td>18.03.2026</td> <td>Доверенность выдана "Газпромбанк" (АО), ОГРН 1027700167110</td></tr><tr><td>Д-Ф001/515</td> <td>23.03.2026</td> <td>Доверенность выдана "Газпромбанк" (АО), ОГРН 1027700167110</td></tr><tr><td>Д-Ф001/594</td> <td>24.03.2026</td> <td>Доверенность выдана "Газпромбанк" (АО), ОГРН 1027700167110</td></tr><tr><td>Д-Ф001/575</td> <td>24.03.2026</td> <td>Доверенность выдана "Газпромбанк" (АО), ОГРН 1027700167110</td></tr><tr><td>Д-Ф001/587</td> <td>24.03.2026</td> <td>Доверенность выдана "Газпромбанк" (АО), ОГРН 1027700167110</td></tr><tr><td>Д-Ф001/717</td> <td>27.04.2026</td> <td>Доверенность выдана "Газпромбанк" (АО), ОГРН 1027700167110</td></tr><tr><td>Д-Ф001/818</td> <td>06.05.2026</td> <td>Доверенность выдана "Газпромбанк" (АО), ОГРН 1027700167110</td></tr><tr><td>Д-Ф001/862</td> <td>12.05.2026</td> <td>Доверенность выдана "Газпромбанк" (АО), ОГРН 1027700167110</td></tr><tr><td>Д-Ф001/878</td> <td>12.05.2026</td> <td>Доверенность выдана "Газпромбанк" (АО), ОГРН 1027700167110</td></tr></tbody><tbody><tr><td rowspan="3">77/749-н/77-2026-7-770</td> <td rowspan="3">12.08.2026</td> <td rowspan="3">Глухов Сергей Иванович, Нотариус</td> <td rowspan="3">Пыжов Алексей Николаевич</td> <td rowspan="3">"Газпромбанк" (Акционерное общество)</td> <td>Д-042/4249</td> <td>01.11.2025</td> <td>по 31.12.2026 на Кузнецова  Александра Романовна (паспорт 98 19 866486 выдан 16.01.2020 МВД ПО РЕСПУБЛИКЕ САХА (ЯКУТИЯ), без права передоверия</td> <!----></tr> <tr><td>Д-042/4250</td> <td>01.11.2025</td> <td>по 31.03.2029 на Кузнецова Александра Романовна (паспорт 98 19 866486 выдан 16.01.2020 МВД ПО РЕСПУБЛИКЕ САХА (ЯКУТИЯ), Без права передоверия</td></tr><tr><td>Д-042/4586</td> <td>11.03.2026</td> <td>по 31.03.2029 Кузнецова Александра Романовна (паспорт 98 19 866486 выдан 16.01.2020 МВД ПО РЕСПУБЛИКЕ САХА (ЯКУТИЯ), Без права передоверия</td></tr></tbody><tbody><tr><td rowspan="1">77/749-н/77-2026-7-771</td> <td rowspan="1">12.08.2026</td> <td rowspan="1">Глухов Сергей Иванович, Нотариус</td> <td rowspan="1">Пыжов Алексей Николаевич</td> <td rowspan="1">"Газпромбанк" (Акционерное общество)</td> <td>Д-Ф026-026/568/26</td> <td>14.07.2026</td> <td>Действует по 31.03.2029 Мкртчян Лусине Агасиновна (паспорт 6512 388355 выдан 30.07.2012  ТП УФМС России по Свердловской области в Байкаловском районе, код подразделения 660-033) Без права передоверия</td> <!----></tr> </tbody><tbody><tr><td rowspan="6">77/749-н/77-2026-7-772</td> <td rowspan="6">12.08.2026</td> <td rowspan="6">Глухов Сергей Иванович, Нотариус</td> <td rowspan="6">Пыжов Алексей Николаевич</td> <td rowspan="6">"Газпромбанк" (Акционерное общество)</td> <td>Д-Ф07-007/338/26</td> <td>30.03.2026</td> <td>Частичная отмена, Д-Ф07-007/338/26 от 30.03.2026 Действует по 31.03.2029, ЩербининаАнастасия Алексеевна (паспорт 0722 905526, выдан 24.06.2022 ГУ МВД РОССИИ ПО  ТАВРОПОЛЬСКОМУ КРАЮ, код подразделения 260-035) Без права передоверия</td> <!----></tr> <tr><td>Д-Ф07-007/38/26</td> <td>02.02.2026</td> <td>Частичная отмена, Действует по 31.03.2029, Шабанова Евгения Евгеньевна (паспорт 18 13 831240 выдан 27.04.2013 Отделением УФМС России по Волгоградской области в Ворошиловском р-не гор. Волгограда, код подразделения 340-001) Без права передоверия</td></tr><tr><td>Д-Ф07-007/257/26</td> <td>20.03.2026</td> <td>Частичная отмена, Действует по 31.03.2029, Шабанова Евгения Евгеньевна, (паспорт 18 13 831240 выдан 27.04.2013 Отделением УФМС России по Волгоградской области в Ворошиловском р-не гор. Волгограда, код подразделения 340-001), Без права передоверия</td></tr><tr><td>Д-Ф07-007/333/26</td> <td>30.03.2026</td> <td>Частичная отмена, Действует по 31.12.2026, Шабанова Евгения Евгеньевна, (паспорт 18 13 831240 выдан 27.04.2013 Отделением УФМС России по Волгоградской области в Ворошиловском р-не гор. Волгограда, код подразделения 340-001), Без права передоверия</td></tr><tr><td>Д-Ф07-007/514/26</td> <td>13.04.2026</td> <td>Частичная отмена, Действует по 31.03.2029, Шабанова Евгения Евгеньевна, (паспорт 18 13 831240 выдан 27.04.2013 Отделением УФМС России по Волгоградской области в Ворошиловском р-не гор. Волгограда, код подразделения 340-001), Без права передоверия</td></tr><tr><td>Д-Ф07-007/601/26</td> <td>19.05.2026</td> <td>Частичная отмена, Действует по 31.03.2029, Шабанова Евгения Евгеньевна, (паспорт 18 13 831240 выдан 27.04.2013 Отделением УФМС России по Волгоградской области в Ворошиловском р-не гор. Волгограда, код подразделения 340-001), Без права передоверия</td></tr></tbody></table></div> <div><div id="pagination" class="flex items-center gap-2 justify-center" style="padding-top: 0px; text-align: center;"><button disabled="disabled" class="btn btn-default justify-center" style="padding: 10px; min-width: 60px;">
+        &lt;&lt;
+    </button> <button disabled="disabled" class="btn btn-default justify-center" style="padding: 10px; min-width: 60px;">
+        &lt;
+    </button> <div style="display: inline-block; padding: 0px 10px;">
+        1 из 2299
+    </div> <button class="btn btn-default justify-center" style="padding: 10px; min-width: 60px;">
+        &gt;
+    </button> <button class="btn btn-default justify-center" style="padding: 10px; min-width: 60px;">
+        &gt;&gt;
+    </button></div></div> <!----></div></div></div> <!----></div></div>
+<script type="text/javascript" src="./Проверка доверенностей по реквизитам_files/f5868cea69827c072825.index.js"></script><div class="datepickers-container" id="datepickers-container"><div class="datepicker -bottom-left- -from-bottom-"><i class="datepicker--pointer"></i><nav class="datepicker--nav"><div class="datepicker--nav-action" data-action="prev"><svg><path d="M 17,12 l -5,5 l 5,5"></path></svg></div><div class="datepicker--nav-title -disabled-">1980 - 1989</div><div class="datepicker--nav-action" data-action="next"><svg><path d="M 14,12 l 5,5 l -5,5"></path></svg></div></nav><div class="datepicker--content"><div class="datepicker--years datepicker--body active"><div class="datepicker--cells datepicker--cells-years"><div class="datepicker--cell datepicker--cell-year -other-decade-" data-year="1979">1979</div><div class="datepicker--cell datepicker--cell-year" data-year="1980">1980</div><div class="datepicker--cell datepicker--cell-year" data-year="1981">1981</div><div class="datepicker--cell datepicker--cell-year" data-year="1982">1982</div><div class="datepicker--cell datepicker--cell-year" data-year="1983">1983</div><div class="datepicker--cell datepicker--cell-year" data-year="1984">1984</div><div class="datepicker--cell datepicker--cell-year" data-year="1985">1985</div><div class="datepicker--cell datepicker--cell-year" data-year="1986">1986</div><div class="datepicker--cell datepicker--cell-year" data-year="1987">1987</div><div class="datepicker--cell datepicker--cell-year" data-year="1988">1988</div><div class="datepicker--cell datepicker--cell-year" data-year="1989">1989</div><div class="datepicker--cell datepicker--cell-year -other-decade-" data-year="1990">1990</div></div></div></div><div class="datepicker--buttons"><span class="datepicker--button" data-action="clear">Очистить</span></div></div><div class="datepicker -bottom-left- -from-bottom-"><i class="datepicker--pointer"></i><nav class="datepicker--nav"><div class="datepicker--nav-action" data-action="prev"><svg><path d="M 17,12 l -5,5 l 5,5"></path></svg></div><div class="datepicker--nav-title -disabled-">1980 - 1989</div><div class="datepicker--nav-action" data-action="next"><svg><path d="M 14,12 l 5,5 l -5,5"></path></svg></div></nav><div class="datepicker--content"><div class="datepicker--years datepicker--body active"><div class="datepicker--cells datepicker--cells-years"><div class="datepicker--cell datepicker--cell-year -other-decade-" data-year="1979">1979</div><div class="datepicker--cell datepicker--cell-year" data-year="1980">1980</div><div class="datepicker--cell datepicker--cell-year" data-year="1981">1981</div><div class="datepicker--cell datepicker--cell-year" data-year="1982">1982</div><div class="datepicker--cell datepicker--cell-year" data-year="1983">1983</div><div class="datepicker--cell datepicker--cell-year" data-year="1984">1984</div><div class="datepicker--cell datepicker--cell-year" data-year="1985">1985</div><div class="datepicker--cell datepicker--cell-year" data-year="1986">1986</div><div class="datepicker--cell datepicker--cell-year" data-year="1987">1987</div><div class="datepicker--cell datepicker--cell-year" data-year="1988">1988</div><div class="datepicker--cell datepicker--cell-year" data-year="1989">1989</div><div class="datepicker--cell datepicker--cell-year -other-decade-" data-year="1990">1990</div></div></div></div><div class="datepicker--buttons"><span class="datepicker--button" data-action="clear">Очистить</span></div></div><div class="datepicker -bottom-left- -from-bottom-"><i class="datepicker--pointer"></i><nav class="datepicker--nav"><div class="datepicker--nav-action" data-action="prev"><svg><path d="M 17,12 l -5,5 l 5,5"></path></svg></div><div class="datepicker--nav-title -disabled-">1980 - 1989</div><div class="datepicker--nav-action" data-action="next"><svg><path d="M 14,12 l 5,5 l -5,5"></path></svg></div></nav><div class="datepicker--content"><div class="datepicker--years datepicker--body active"><div class="datepicker--cells datepicker--cells-years"><div class="datepicker--cell datepicker--cell-year -other-decade-" data-year="1979">1979</div><div class="datepicker--cell datepicker--cell-year" data-year="1980">1980</div><div class="datepicker--cell datepicker--cell-year" data-year="1981">1981</div><div class="datepicker--cell datepicker--cell-year" data-year="1982">1982</div><div class="datepicker--cell datepicker--cell-year" data-year="1983">1983</div><div class="datepicker--cell datepicker--cell-year" data-year="1984">1984</div><div class="datepicker--cell datepicker--cell-year" data-year="1985">1985</div><div class="datepicker--cell datepicker--cell-year" data-year="1986">1986</div><div class="datepicker--cell datepicker--cell-year" data-year="1987">1987</div><div class="datepicker--cell datepicker--cell-year" data-year="1988">1988</div><div class="datepicker--cell datepicker--cell-year" data-year="1989">1989</div><div class="datepicker--cell datepicker--cell-year -other-decade-" data-year="1990">1990</div></div></div></div><div class="datepicker--buttons"><span class="datepicker--button" data-action="clear">Очистить</span></div></div><div class="datepicker -bottom-left- -from-bottom-"><i class="datepicker--pointer"></i><nav class="datepicker--nav"><div class="datepicker--nav-action" data-action="prev"><svg><path d="M 17,12 l -5,5 l 5,5"></path></svg></div><div class="datepicker--nav-title -disabled-">1980 - 1989</div><div class="datepicker--nav-action" data-action="next"><svg><path d="M 14,12 l 5,5 l -5,5"></path></svg></div></nav><div class="datepicker--content"><div class="datepicker--years datepicker--body active"><div class="datepicker--cells datepicker--cells-years"><div class="datepicker--cell datepicker--cell-year -other-decade-" data-year="1979">1979</div><div class="datepicker--cell datepicker--cell-year" data-year="1980">1980</div><div class="datepicker--cell datepicker--cell-year" data-year="1981">1981</div><div class="datepicker--cell datepicker--cell-year" data-year="1982">1982</div><div class="datepicker--cell datepicker--cell-year" data-year="1983">1983</div><div class="datepicker--cell datepicker--cell-year" data-year="1984">1984</div><div class="datepicker--cell datepicker--cell-year" data-year="1985">1985</div><div class="datepicker--cell datepicker--cell-year" data-year="1986">1986</div><div class="datepicker--cell datepicker--cell-year" data-year="1987">1987</div><div class="datepicker--cell datepicker--cell-year" data-year="1988">1988</div><div class="datepicker--cell datepicker--cell-year" data-year="1989">1989</div><div class="datepicker--cell datepicker--cell-year -other-decade-" data-year="1990">1990</div></div></div></div><div class="datepicker--buttons"><span class="datepicker--button" data-action="clear">Очистить</span></div></div><div class="datepicker -bottom-left- -from-bottom-"><i class="datepicker--pointer"></i><nav class="datepicker--nav"><div class="datepicker--nav-action" data-action="prev"><svg><path d="M 17,12 l -5,5 l 5,5"></path></svg></div><div class="datepicker--nav-title -disabled-">1980 - 1989</div><div class="datepicker--nav-action" data-action="next"><svg><path d="M 14,12 l 5,5 l -5,5"></path></svg></div></nav><div class="datepicker--content"><div class="datepicker--years datepicker--body active"><div class="datepicker--cells datepicker--cells-years"><div class="datepicker--cell datepicker--cell-year -other-decade-" data-year="1979">1979</div><div class="datepicker--cell datepicker--cell-year" data-year="1980">1980</div><div class="datepicker--cell datepicker--cell-year" data-year="1981">1981</div><div class="datepicker--cell datepicker--cell-year" data-year="1982">1982</div><div class="datepicker--cell datepicker--cell-year" data-year="1983">1983</div><div class="datepicker--cell datepicker--cell-year" data-year="1984">1984</div><div class="datepicker--cell datepicker--cell-year" data-year="1985">1985</div><div class="datepicker--cell datepicker--cell-year" data-year="1986">1986</div><div class="datepicker--cell datepicker--cell-year" data-year="1987">1987</div><div class="datepicker--cell datepicker--cell-year" data-year="1988">1988</div><div class="datepicker--cell datepicker--cell-year" data-year="1989">1989</div><div class="datepicker--cell datepicker--cell-year -other-decade-" data-year="1990">1990</div></div></div></div><div class="datepicker--buttons"><span class="datepicker--button" data-action="clear">Очистить</span></div></div><div class="datepicker -bottom-left- -from-bottom-"><i class="datepicker--pointer"></i><nav class="datepicker--nav"><div class="datepicker--nav-action" data-action="prev"><svg><path d="M 17,12 l -5,5 l 5,5"></path></svg></div><div class="datepicker--nav-title -disabled-">1980 - 1989</div><div class="datepicker--nav-action" data-action="next"><svg><path d="M 14,12 l 5,5 l -5,5"></path></svg></div></nav><div class="datepicker--content"><div class="datepicker--years datepicker--body active"><div class="datepicker--cells datepicker--cells-years"><div class="datepicker--cell datepicker--cell-year -other-decade-" data-year="1979">1979</div><div class="datepicker--cell datepicker--cell-year" data-year="1980">1980</div><div class="datepicker--cell datepicker--cell-year" data-year="1981">1981</div><div class="datepicker--cell datepicker--cell-year" data-year="1982">1982</div><div class="datepicker--cell datepicker--cell-year" data-year="1983">1983</div><div class="datepicker--cell datepicker--cell-year" data-year="1984">1984</div><div class="datepicker--cell datepicker--cell-year" data-year="1985">1985</div><div class="datepicker--cell datepicker--cell-year" data-year="1986">1986</div><div class="datepicker--cell datepicker--cell-year" data-year="1987">1987</div><div class="datepicker--cell datepicker--cell-year" data-year="1988">1988</div><div class="datepicker--cell datepicker--cell-year" data-year="1989">1989</div><div class="datepicker--cell datepicker--cell-year -other-decade-" data-year="1990">1990</div></div></div></div><div class="datepicker--buttons"><span class="datepicker--button" data-action="clear">Очистить</span></div></div><div class="datepicker -bottom-left- -from-bottom-"><i class="datepicker--pointer"></i><nav class="datepicker--nav"><div class="datepicker--nav-action" data-action="prev"><svg><path d="M 17,12 l -5,5 l 5,5"></path></svg></div><div class="datepicker--nav-title -disabled-">1980 - 1989</div><div class="datepicker--nav-action" data-action="next"><svg><path d="M 14,12 l 5,5 l -5,5"></path></svg></div></nav><div class="datepicker--content"><div class="datepicker--years datepicker--body active"><div class="datepicker--cells datepicker--cells-years"><div class="datepicker--cell datepicker--cell-year -other-decade-" data-year="1979">1979</div><div class="datepicker--cell datepicker--cell-year" data-year="1980">1980</div><div class="datepicker--cell datepicker--cell-year" data-year="1981">1981</div><div class="datepicker--cell datepicker--cell-year" data-year="1982">1982</div><div class="datepicker--cell datepicker--cell-year" data-year="1983">1983</div><div class="datepicker--cell datepicker--cell-year" data-year="1984">1984</div><div class="datepicker--cell datepicker--cell-year" data-year="1985">1985</div><div class="datepicker--cell datepicker--cell-year" data-year="1986">1986</div><div class="datepicker--cell datepicker--cell-year" data-year="1987">1987</div><div class="datepicker--cell datepicker--cell-year" data-year="1988">1988</div><div class="datepicker--cell datepicker--cell-year" data-year="1989">1989</div><div class="datepicker--cell datepicker--cell-year -other-decade-" data-year="1990">1990</div></div></div></div><div class="datepicker--buttons"><span class="datepicker--button" data-action="clear">Очистить</span></div></div></div><script type="text/javascript" src="./Проверка доверенностей по реквизитам_files/05a030e42973916273a3.vendors.js"></script>
+</body></html>
